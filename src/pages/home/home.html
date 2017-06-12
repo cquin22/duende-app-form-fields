@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Inicio</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-spinner *ngIf="!fields" name="crescent"></ion-spinner>
+  <form #form="ngForm" >
+    <div  *ngFor="let field of fields">
+      <input-component class="form-item" *ngIf="field.type === 'text' || field.type === 'tel' || field.type === 'number' ||  field.type === 'time' || field.type === 'password'  " [inputs]="field"></input-component>
+      <select-component  class="form-item" *ngIf="field.type === 'select'" [select]="field"></select-component>
+      <radio-component  class="form-item" *ngIf="field.type === 'radio'" [radio]="field"></radio-component>
+      <check-component  class="form-item" *ngIf="field.type === 'checkbox'" [check]="field"></check-component>
+    </div>
+    <button ion-button block color="secondary" (click)="reloadForm()">Cambiar Formulario</button>
+  </form>
+</ion-content>

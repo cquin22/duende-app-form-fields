@@ -1,0 +1,9 @@
+{
+  "name": "app",
+  "app_id": "",
+  "type": "ionic-angular",
+  "proxies": [{
+    "path": "/form-fields",
+    "proxyUrl": "http://34.194.15.225/form-fields"
+  }]
+}

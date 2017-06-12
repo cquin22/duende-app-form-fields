@@ -1,0 +1,34 @@
+<!--
+  Generated template for the ContactPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sobre mi</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-spinner *ngIf="!profile" name="crescent"></ion-spinner>
+  <ion-card *ngIf="profile">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{profile.avatar_url}}">
+      </ion-avatar>
+      <h2>{{profile.name}}</h2>
+      <p><a href="{{profile.blog}}">Blog</a></p>
+    </ion-item>
+
+    <img src="assets/info.jpg">
+
+    <ion-card-content>
+      <p>{{profile.bio}}... ver más información en: <a href="{{profile.blog}}">{{profile.blog}}</a> </p>
+    </ion-card-content>
+  </ion-card>  
+</ion-content>
